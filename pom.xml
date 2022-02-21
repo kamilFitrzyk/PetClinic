@@ -2,12 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-    <packaging>pom</packaging>
+	<groupId>springframework</groupId>
+	<artifactId>PetClinic</artifactId>
+	<version>0.0.1</version>
+
 
     <modules>
         <module>petclinic-data</module>
 		<module>petclinic-web</module>
 	</modules>
+
+	<packaging>pom</packaging>
+
+	<name>PetClinic</name>
+	<description>Pet Clinic Project</description>
 
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -15,13 +23,6 @@
 		<version>2.6.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-
-	<groupId>springframework</groupId>
-	<artifactId>PetClinic</artifactId>
-	<version>0.0.1</version>
-
-	<name>PetClinic</name>
-	<description>PetClinic</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,24 +33,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
 
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<goals>install</goals>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
 
 	<scm>
 		<developerConnection>scm:git:git@github.com:kamilFitrzyk/PetClinic.git</developerConnection>
