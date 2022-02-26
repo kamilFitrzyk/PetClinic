@@ -1,5 +1,6 @@
 package springframework.petclinic.service.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import springframework.petclinic.model.Owner;
 import springframework.petclinic.model.Pet;
