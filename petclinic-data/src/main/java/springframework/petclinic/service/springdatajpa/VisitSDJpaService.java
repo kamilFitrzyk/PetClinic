@@ -2,11 +2,9 @@ package springframework.petclinic.service.springdatajpa;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import springframework.petclinic.model.Vet;
 import springframework.petclinic.model.Visit;
-import springframework.petclinic.service.VetService;
 import springframework.petclinic.service.VisitService;
-import springframework.repositories.VisitRepository;
+import springframework.petclinic.repositories.VisitRepository;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,7 +1,6 @@
-package springframework.repositories;
+package springframework.petclinic.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
 import springframework.petclinic.model.Pet;
 
 
