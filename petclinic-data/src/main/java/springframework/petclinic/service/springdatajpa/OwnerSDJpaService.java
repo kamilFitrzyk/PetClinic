@@ -1,6 +1,7 @@
 package springframework.petclinic.service.springdatajpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class OwnerSDJpaService implements OwnerService {
     private final OwnerRepository ownerRepository;
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;
+
 
     public OwnerSDJpaService(OwnerRepository ownerRepository,
                              PetRepository petRepository,
