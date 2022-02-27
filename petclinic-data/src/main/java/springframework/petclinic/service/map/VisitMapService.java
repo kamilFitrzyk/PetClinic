@@ -1,10 +1,13 @@
 package springframework.petclinic.service.map;
 
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import springframework.petclinic.model.Visit;
 import springframework.petclinic.service.VisitService;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
