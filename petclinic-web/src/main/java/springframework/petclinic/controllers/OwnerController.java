@@ -2,7 +2,10 @@ package springframework.petclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import springframework.petclinic.service.OwnerService;
 
 @RequestMapping("/owners")
@@ -26,4 +29,13 @@ public class OwnerController {
     public String findOwners(){
         return "notimplemented";
     }
+
+    @GetMapping("/{ownersId}")
+    public ModelAndView showOwner(@PathVariable("ownersId") Long ownerId){
+        ModelAndView mav = new ModelAndView("owners/ownerDetails");
+        mav.addObject(ownerService.findById(ownerId));
+        return mav;
+    }
+
+
 }
