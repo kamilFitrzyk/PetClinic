@@ -27,10 +27,11 @@ public class Pet extends BaseEntity{
     @JoinColumn(name = "owners_id")
     private Owner owner;
 
-    @Column(name = "birt_data")
-    private LocalDate birtDate;
+    @Column(name = "birth_data")
+    private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
+
 
 }
