@@ -44,5 +44,10 @@ public class OwnerController {
         return mav;
     }
 
+    @GetMapping("/list")
+    public String listOwners() {
+        return "notimplemented";
+    }
+
 
 }
