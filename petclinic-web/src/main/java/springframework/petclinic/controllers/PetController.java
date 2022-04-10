@@ -55,7 +55,6 @@ public class PetController {
         pet.setOwner(owner);
         model.addAttribute("pet", pet);
         System.out.println(pet.toString());
-        System.out.println("twoja stara sra do gara");
         return  VIEWS_PETS_CREATE_OR_UPDATE_FORM;
     }
 
