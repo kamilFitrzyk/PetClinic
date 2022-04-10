@@ -15,10 +15,11 @@ import springframework.petclinic.service.OwnerService;
 import springframework.petclinic.service.PetService;
 import springframework.petclinic.service.PetTypeService;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 @Controller
-@RequestMapping("owners/{ownerId}")
+@RequestMapping("/owners/{ownerId}")
 public class PetController {
 
     private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
@@ -56,11 +57,11 @@ public class PetController {
         model.addAttribute("pet", pet);
         System.out.println(pet.toString());
         System.out.println("twoja stara sra do gara");
-        return  VIEWS_PETS_CREATE_OR_UPDATE_FORM;
+        return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
     }
 
     @PostMapping("/pets/new")
-    public String processCreationForm(Owner owner, @Validated Pet pet, BindingResult result, ModelMap model) {
+    public String processCreationForm(Owner owner, @Valid Pet pet, BindingResult result, ModelMap model) {
         if(StringUtils.hasLength(pet.getName()) && pet.isNew() && owner.getPet(pet.getName(), true) != null) {
             result.rejectValue("name", "duplicate", "already exists");
         }
@@ -74,13 +75,13 @@ public class PetController {
         }
     }
 
-    @GetMapping("pets/{petId}/edit")
+    @GetMapping("/pets/{petId}/edit")
     public String initUpdateForm(@PathVariable Long petId, Model model) {
         model.addAttribute("pet", petService.findById(petId));
         return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
     }
 
-    @PostMapping("pets/{petId}/edit")
+    @PostMapping("/pets/{petId}/edit")
     public String processUpdateForm(@Validated Pet pet, BindingResult result, Owner owner, Model model) {
         if(result.hasErrors()) {
             pet.setOwner(owner);
