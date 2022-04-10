@@ -55,9 +55,17 @@ public class PetController {
         owner.getPets().add(pet);
         pet.setOwner(owner);
         model.addAttribute("pet", pet);
+<<<<<<< HEAD
         return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
+<<<<<<< HEAD
 
 
+=======
+=======
+        System.out.println(pet.toString());
+        return  VIEWS_PETS_CREATE_OR_UPDATE_FORM;
+>>>>>>> 7784fe5 (a)
+>>>>>>> 881c3aa (a)
     }
 
     @PostMapping("/pets/new")
