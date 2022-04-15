@@ -29,7 +29,6 @@ public class Pet extends BaseEntity{
             this.visits = visits;
         }
     }
-    Object o = new Object();
 
     @Column(name = "name")
     private String name;
