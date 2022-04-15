@@ -44,16 +44,6 @@ class OwnerControllerTest {
                 .build();
     }
 
-    @Test
-    void listOwners() throws Exception {
-
-        Mockito.when(ownerService.findAll()).thenReturn(owners);
-
-        mockMvc.perform(get("/owners"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("owners/index"))
-                .andExpect(model().attribute("owners", hasSize(2)));
-    }
 
     @Test
     void listOwnersByIndex() throws Exception {
@@ -71,7 +61,8 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/owners/find"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("notimplemented"));
+                .andExpect(view().name("owners/findOwners"))
+                .andExpect(model().attributeExists("owner"));
 
     }
 
