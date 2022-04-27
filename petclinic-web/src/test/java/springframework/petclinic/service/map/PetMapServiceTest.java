@@ -18,7 +18,10 @@ class PetMapServiceTest {
     void setUp() {
         petMapService = new PetMapService();
 
-        petMapService.save(Pet.builder().id(petId).build());
+        Pet p = new Pet();
+        p.setId(petId);
+
+        petMapService.save(p);
     }
 
     @Test
@@ -58,7 +61,8 @@ class PetMapServiceTest {
 
         Long id = 2L;
 
-        Pet pet2 = Pet.builder().id(id).build();
+        Pet pet2 = new Pet();
+        pet2.setId(id);
 
         Pet savedPet = petMapService.save(pet2);
 
@@ -89,7 +93,8 @@ class PetMapServiceTest {
     @Test
     void deleteWithWrongId() {
 
-        Pet pet = Pet.builder().id(5L).build();
+        Pet pet =  new Pet();
+        pet.setId(5L);
 
         petMapService.delete(pet);
 
